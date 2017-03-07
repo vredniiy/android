@@ -13,6 +13,11 @@
            review="android-review.googlesource.com"
            revision="refs/tags/android-7.1.1_r25" />
 
+  <remote  name="vm"
+           fetch="https://github.com/vredniiy"
+		   revision="vm"
+           sync-j="4" />
+
   <default revision="refs/heads/cm-14.1"
            remote="github"
            sync-c="true"
@@ -503,7 +508,13 @@
   <project path="tools/swt" name="platform/tools/swt" groups="notdefault,tools" remote="aosp" />
   <project path="tools/test/connectivity" name="platform/tools/test/connectivity" remote="aosp" />
   <project path="tools/tradefederation" name="platform/tools/tradefederation" groups="notdefault,tradefed" remote="aosp" />
-
   <include name="snippets/cm.xml" />
-
+  
+  <!-- Device -->
+  <project path="packages/resources/devicesettings" name="LineageOS/android_packages_resources_devicesettings" />
+  <project path="device/qcom/common" name="LineageOS/android_device_qcom_common" />
+  <project path="device/xiaomi/kenzo" name="LineageOS/android_device_xiaomi_kenzo" />
+  <project path="device/xiaomi/msm8956-common" name="LineageOS/android_device_xiaomi_msm8956-common" />
+  <project path="kernel/xiaomi/msm8956" name="LineageOS/android_kernel_xiaomi_msm8956" />
+  <project path="vendor/xiaomi/kenzo" name="proprietary_vendor_xiaomi_kenzo" remote="vm" />
 </manifest>
